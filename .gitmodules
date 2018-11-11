@@ -1,0 +1,3 @@
+[submodule "blink"]
+	path = blink
+	url = git@github.com:danimtb/conan-blink-app.git
