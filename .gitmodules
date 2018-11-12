@@ -1,3 +1,6 @@
 [submodule "blink"]
 	path = blink
 	url = git@github.com:danimtb/conan-blink-app.git
+[submodule "wiringpi/wiringPi"]
+	path = wiringpi/wiringPi
+	url = git://git.drogon.net/wiringPi

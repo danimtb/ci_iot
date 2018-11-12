@@ -1,5 +1,5 @@
 from conans import ConanFile, CMake
-# from conans import tools
+from conans import tools
 from conans.errors import ConanInvalidConfiguration
 
 
@@ -14,13 +14,13 @@ class WiringpiConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
-    exports_sources = "CMakeLists.txt", "wiringPi/*"
+    exports_sources = "CMakeLists.txt"
     generators = "cmake"
 
-    # def source(self):
-    #     self.run("git clone C:/Users/danimtb/juc_israel/wiringpi/wiringPi")
-    #     with tools.chdir("wiringPi"):
-    #         self.run("git checkout %s" % self.version)
+    def source(self):
+        self.run("git clone C:/Users/danimtb/ci_iot/wiringpi/WiringPi")
+        with tools.chdir("WiringPi"):
+            self.run("git checkout %s" % self.version)
 
     def build(self):
         cmake = CMake(self)
