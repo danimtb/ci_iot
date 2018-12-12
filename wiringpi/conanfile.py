@@ -19,8 +19,7 @@ class WiringpiConan(ConanFile):
 
     def source(self):
         self.run("git clone C:/Users/danimtb/ci_iot/wiringpi/WiringPi")
-        with tools.chdir("WiringPi"):
-            self.run("git checkout %s" % self.version)
+        self.run("cd WiringPi && git checkout %s" % self.version)
 
     def build(self):
         cmake = CMake(self)
