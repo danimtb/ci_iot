@@ -20,8 +20,11 @@ inside the **conanio/gcc6-amrv7hf** Docker container configured with the cross-b
 ## Demo steps
 
 1.- Build WiringPi cross-building for ``armv7hf``: ``$ conan create wiringpi conan/stable -pr win_to_rpi``
+
 2.- Upload WiringPi package to Artifactory: ``$ conan upload wiringpi/2.46@conan/stable -all -r artifactory_local``
+
 3.- Make changes in the Blink app and commit them: ``cd blink && git add . && git commit -m "faster!"``
+
 4.- Jenkins Multibranch job will start, get the latest change from *blink*, cross-build the application and upload it to Artifactory.
 
 ## LICENSE
